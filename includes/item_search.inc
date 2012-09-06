@@ -1,5 +1,5 @@
 <?php
-include('connect.php');
+include('../connect.php');
 $query="select name from spend_record group by name";
 
 if($result = mysql_query($query)){

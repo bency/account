@@ -1,5 +1,5 @@
 <?php
-include('connect.php');
+include('../connect.php');
 $query="select type from spend_record group by type";
 
 if($result = mysql_query($query)){

@@ -22,7 +22,7 @@ $(function() {
         filterResults: false
     });
     $("#type_name").autocomplete({
-        url: 'includes/search_type.inc',
+        url: 'includes/type_search.inc',
         useCache: false,
         filterResults: false
     });
