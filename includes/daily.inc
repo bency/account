@@ -50,7 +50,7 @@ if(isset($_POST['submit'])){
 	*/
 	if($er_count == 0){
 		$cur_date = $_POST['buy_date'];
-		$query = "insert into spend_record(buyer,owner,cost,name,buy_date,way_to_pay,project_id) values('".$_POST['buyer']."','".$_POST['owner']."','".$_POST['cost']."','".$_POST['name']."','".mktime(0,0,0,$month,$day,$year)."','".$_POST['way_to_pay']."','0000001')";
+		$query = "insert into spend_record(buyer,owner,cost,type,name,buy_date,way_to_pay,project_id) values('".$_POST['buyer']."','".$_POST['owner']."','".$_POST['cost']."','".$_POST['type']."','".$_POST['name']."','".mktime(0,0,0,$month,$day,$year)."','".$_POST['way_to_pay']."','0000001')";
 			echo "<p>";
 
 		if(mysql_query($query))

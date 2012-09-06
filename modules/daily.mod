@@ -9,6 +9,9 @@ require_once('includes/daily.inc');
 			<label for="input01">日期</label>
 				<input class="input-medium" type="text" id="cdate" name="buy_date" value="<?php echo $cur_date?>"/>
 				<p class="help-block"></p>
+			<label >消費類型</label>
+				<input class="input-medium" type="text" name="type" id='type_name'/>
+				<p class="help-block"><p/>
 			<label >品名</label>
 				<input class="input-medium" type="text" name="name" id='item_name'/>
 				<p class="help-block"><p/>
