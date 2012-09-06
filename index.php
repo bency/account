@@ -17,12 +17,12 @@ $cur_date = date("Y-m-d");
 
 $(function() {
     $("#item_name").autocomplete({
-        url: 'includes/item_search.inc',
+        url: 'includes/item_search.php',
         useCache: false,
         filterResults: false
     });
     $("#type_name").autocomplete({
-        url: 'includes/type_search.inc',
+        url: 'includes/type_search.php',
         useCache: false,
         filterResults: false
     });
