@@ -1,0 +1,143 @@
+.main_body{
+background-color:#7f7f7f;
+}
+.text_center {
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:320px;
+	padding-right:320px;
+}
+.title_region{
+}
+.sub_nav_region{
+	height:50px;
+}
+.sub_nav_btn{
+	padding:10px;
+	color:#343434;
+	-moz-box-shadow: 0px 0px 10px #343434;
+	-webkit-box-shadow: 0px 0px 10px #343434;
+	-o-box-shadow: 0px 0px 10px #343434;
+	box-shadow: 0px 0px 10px #343434;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #656565;
+	background:#f8a102;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="f8a102", endColorstr="f56b00"); /* Pour IE seulement et mode gradient à linear */
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f8a102), to(#f56b00));
+	background-image: -moz-linear-gradient(top center, #f8a102, #f56b00);
+	background-image: -o-linear-gradient(top, #f8a102, #f56b00); /*uniquement en mode linear*/
+}
+.sub_nav{
+	width:640px;
+	height:70px;
+	margin-top:10px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.sub_nav ul{
+	padding-top:20px;
+	margin-bottom:auto;
+}
+.sub_nav li{
+	display:inline;
+	width: 800px;
+}
+.content_region{
+	background-color:#7f7f7f;
+	padding:20px 40px;
+}
+.title_banner{
+	width:640px;
+	height:70px;
+	background-color:#afafaf;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:20px;
+	margin-bottom:10px;
+}
+.curve{
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+.shadow{
+	-moz-box-shadow: 10px 10px 5px #656565;
+	-webkit-box-shadow: 10px 10px 5px #656565;
+	-o-box-shadow: 10px 10px 5px #656565;
+	box-shadow: 10px 10px 5px #656565;
+}
+.add_form {
+	padding:30px;
+}
+.content{
+	width:640px;
+	background-color:#afafaf;
+	margin-left:auto;
+	margin-right:auto;
+}
+.submit_btn {
+	color:#343434;
+	-moz-box-shadow: 0px 0px 10px #343434;
+	-webkit-box-shadow: 0px 0px 10px #343434;
+	-o-box-shadow: 0px 0px 10px #343434;
+	box-shadow: 0px 0px 10px #343434;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #656565;
+	background:#cfcfcf;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="cfcfcf", endColorstr="656565"); /* Pour IE seulement et mode gradient à linear */
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#cfcfcf), to(#656565));
+	background-image: -moz-linear-gradient(top center, #cfcfcf, #656565);
+	background-image: -o-linear-gradient(top, #cfcfcf, #656565); /*uniquement en mode linear*/
+}
+#form2{
+	margin:auto;
+	color:#fff;
+	width:320px; /* customize width, this form have fluid layout */
+	}   
+#form2 h3{ 
+	margin:0;
+	color:#fff;
+	font-size:20px;
+	}           
+#form2 h3 span{
+	display:block;
+	padding:10px 20px;
+	background:url(../images/form2/form_ico.gif) no-repeat 93% 50%;             
+	}                   
+#form2 fieldset{
+	margin:0;
+	padding:0;
+	border:none;        
+	border-top:3px solid #000;
+	padding-bottom:1em;
+	}           
+#form2 legend{display:none;}        
+#form2 p{margin:.5em 20px;} 
+#form2 label{display:block;}        
+#form2 input, #form2 textarea{          
+	width:272px;
+	border:1px solid #111;
+	background:#282828 url(../images/form2/form_input.gif) repeat-x;
+	padding:5px 3px;
+	color:#fff;
+	}
+#form2 textarea{
+	height:125px;                                                                                                                                          
+	overflow:auto;
+	}
+#form2 p.submit{
+	text-align:right;
+	}
+#form2 button{
+	padding:0 20px;
+	height:32px;
+	line-height:32px;
+	border:1px solid #70ad2e;
+	color:#fff;
+	cursor:pointer;
+	text-align:center;
+	}

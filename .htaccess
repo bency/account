@@ -1,0 +1,12 @@
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !.php
+RewriteRule ^home/?$ index.php?id=0
+RewriteRule ^register/?$ index.php?id=1
+RewriteRule ^daily/?$ index.php?id=2
+RewriteRule ^daily/([0-9\-]+)?$ index.php?id=2&date=$1
+RewriteRule ^login/?$ index.php?id=3
+RewriteRule ^verify/?$ index.php?id=4
+RewriteRule ^overview/?$ index.php?id=5
+RewriteRule ^find-me/?$ index.php?id=10
+RewriteRule ^temp/?$ index.php?id=99
+ErrorDocument 500 /index.php?id=99
