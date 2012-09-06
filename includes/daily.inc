@@ -81,7 +81,7 @@ else if($_POST['modify'] == "yes"){
 	$year = substr($date,0,4);
 	$month = substr($date,5,2);
 	$day = substr($date,8,2);
-	$query = "update spend_record set buy_date='".mktime(0,0,0,$month,$day,$year)."',name='".$_POST['mod_name']."',cost='".$_POST['mod_cost']."',way_to_pay='".$_POST['way_to_pay']."' where id=".$_POST['id'];
+	$query = "update spend_record set buy_date='".mktime(0,0,0,$month,$day,$year)."',type='".$_POST['mod_type']."',name='".$_POST['mod_name']."',cost='".$_POST['mod_cost']."',way_to_pay='".$_POST['way_to_pay']."' where id=".$_POST['id'];
 	if(mysql_query($query))
 		$error="SAVE";
 	else
@@ -116,7 +116,7 @@ if($num_row > 0){
 		$result.= "<input type='hidden' name='id' value='".$res['id']."'/>";
 		if($_POST['id']==$res['id'] && $_POST['modify']=="no"){
 			$result.= "<td class=\"span4\"><input value=".date("Y-m-d",$res['buy_date'])." name='mod_date' class='input-small'/></td>";
-			$result.= "<td class=\"span4\"><input value='".$res['type']."' name='mod_name' id='mod_type' class='input-medium'/></td>";
+			$result.= "<td class=\"span4\"><input value='".$res['type']."' name='mod_type' id='mod_type' class='input-medium'/></td>";
 			$result.= "<td class=\"span4\"><input value='".$res['name']."' name='mod_name' id='mod_item' class='input-medium'/></td>";
 			$result.= "<td class=\"span1\"><input value='".$res['cost']."' name='mod_cost' class='input-mini'></td>";
 		$result.= "<td class=\"span2\">".$res['buyer']."</td>";
