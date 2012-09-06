@@ -116,7 +116,8 @@ if($num_row > 0){
 		$result.= "<input type='hidden' name='id' value='".$res['id']."'/>";
 		if($_POST['id']==$res['id'] && $_POST['modify']=="no"){
 			$result.= "<td class=\"span4\"><input value=".date("Y-m-d",$res['buy_date'])." name='mod_date' class='input-small'/></td>";
-			$result.= "<td class=\"span4\"><input value='".$res['name']."' name='mod_name' class='input-medium'/></td>";
+			$result.= "<td class=\"span4\"><input value='".$res['type']."' name='mod_name' id='mod_type' class='input-medium'/></td>";
+			$result.= "<td class=\"span4\"><input value='".$res['name']."' name='mod_name' id='mod_item' class='input-medium'/></td>";
 			$result.= "<td class=\"span1\"><input value='".$res['cost']."' name='mod_cost' class='input-mini'></td>";
 		$result.= "<td class=\"span2\">".$res['buyer']."</td>";
 		$result.= "<td class=\"span2\">".$res['owner']."</td>";
@@ -125,7 +126,8 @@ if($num_row > 0){
 		}
 		else{
 			$result.= "<td class='span2'>".date("m-d",$res['buy_date'])."</td>";
-			$result.= "<td class='span4'>".$res['name']."</td>";
+			$result.= "<td class='span2'>".$res['type']."</td>";
+			$result.= "<td class='span2'>".$res['name']."</td>";
 			$result.= "<input type='hidden' name='mod_date' value='".date("Y-m-d",$res['buy_date'])."'/>";
 			$result.= "<td class='span1'>".$res['cost']."</td>";
 			$result.= "<td class='span2'>".$res['buyer']."</td>";

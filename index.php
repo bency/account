@@ -16,6 +16,16 @@ $cur_date = date("Y-m-d");
     <script type="text/javascript">
 
 $(function() {
+    $("#mod_item").autocomplete({
+        url: 'includes/item_search.php',
+        useCache: false,
+        filterResults: false
+    });
+    $("#mod_type").autocomplete({
+        url: 'includes/type_search.php',
+        useCache: false,
+        filterResults: false
+    });
     $("#item_name").autocomplete({
         url: 'includes/item_search.php',
         useCache: false,
