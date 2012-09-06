@@ -6,7 +6,6 @@ require_once('includes/daily.inc');
 	<form class="well form-horizontal" method="post" action="#">
 		<fieldset>
 		<legend>今日開銷</legend>
-		<div >
 			<label for="input01">日期</label>
 				<input class="input-medium" type="text" id="cdate" name="buy_date" value="<?php echo $cur_date?>"/>
 				<p class="help-block"></p>
@@ -40,7 +39,6 @@ require_once('includes/daily.inc');
 		<label >
 		<button type="submit" name="submit" value="送出" class="btn btn-primary">送出</button>
 		</label>
-		</div>
 		</fieldset>
 	</form>
 	</div>

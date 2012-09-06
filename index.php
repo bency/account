@@ -8,7 +8,7 @@ $cur_date = date("Y-m-d");
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><?echo $head_title?> - 小萍與阿軒的記帳本</title>
+<title><?php echo $head_title?> - 小萍與阿軒的記帳本</title>
     <link rel="stylesheet" type="text/css" href="includes/jquery.autocomplete.css">
 </head>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
