@@ -115,7 +115,7 @@ if($num_row > 0){
 		$result.= "<tr><form id='modify' action='#' method='post'>";
 		$result.= "<input type='hidden' name='id' value='".$res['id']."'/>";
 		if($_POST['id']==$res['id'] && $_POST['modify']=="no"){
-			$result.= "<td class=\"span4\"><input value=".date("Y-m-d",$res['buy_date'])." name='mod_date' class='input-small'/></td>";
+			$result.= "<td class=\"span4\"><input value=".date("Y-m-d",$res['buy_date'])." name='mod_date' id='mod_date' class='input-small'/></td>";
 			$result.= "<td class=\"span4\"><input value='".$res['type']."' name='mod_type' id='mod_type' class='input-medium'/></td>";
 			$result.= "<td class=\"span4\"><input value='".$res['name']."' name='mod_name' id='mod_item' class='input-medium'/></td>";
 			$result.= "<td class=\"span1\"><input value='".$res['cost']."' name='mod_cost' class='input-mini'></td>";

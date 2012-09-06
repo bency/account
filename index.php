@@ -45,15 +45,27 @@ $(function() {
 <script type="text/javascript" src="/includes/jquery.datepick-zh-TW.js"></script>
 <script type="text/javascript">
 $(function() {
-$('#cdate').datepick($.extend({
-showTrigger: '#calImg',
-altField: '#l10nAlternate2', altFormat: ' yyyy年MM d日 DD'},
-$.datepick.regional['zh-TW']));
-$('#l10nLanguage').change(function() {
-var language = $(this).val();
-$.localise('includes/jquery.datepick', language);
-$('#l10nPicker').datepick('option', $.datepick.regional[language]);
-$.datepick.setDefaults($.datepick.regional['']); });
+	$('#cdate').datepick($.extend({
+		showTrigger: '#calImg',
+		altField: '#l10nAlternate2', altFormat: ' yyyy年MM d日 DD'},
+		$.datepick.regional['zh-TW']));
+	$('#l10nLanguage').change(function() {
+		var language = $(this).val();
+		$.localise('includes/jquery.datepick', language);
+		$('#l10nPicker').datepick('option', $.datepick.regional[language]);
+		$.datepick.setDefaults($.datepick.regional['']); 
+	});
+
+	$('#mod_date').datepick($.extend({
+		showTrigger: '#calImg',
+		altField: '#l10nAlternate2', altFormat: ' yyyy年MM d日 DD'},
+		$.datepick.regional['zh-TW']));
+	$('#l10nLanguage').change(function() {
+		var language = $(this).val();
+		$.localise('includes/jquery.datepick', language);
+		$('#l10nPicker').datepick('option', $.datepick.regional[language]);
+		$.datepick.setDefaults($.datepick.regional['']); 
+	});
 });
 function showDate(date) {
     alert('The date chosen is ' + date);
