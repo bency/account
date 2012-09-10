@@ -30,16 +30,16 @@ require_once('includes/daily.inc');
 				</div>
 		<label >購買人</label>
 				<select class="span2" name="buyer" >
-					<option value="bency" selected>林詠軒</option>
-					<option value="karen">游怡萍</option>
+					<option value="bency" <?php if($_POST['buyer'] == 'bency') echo 'selected'?>>林詠軒</option>
+					<option value="karen" <?php if($_POST['buyer'] == 'karen') echo 'selected'?>>游怡萍</option>
 				</select>
 				<?php if(isset($error_buyer)){?>
 				<p class="help-block"><?php echo $error_buydate?></p>
 				<?php } ?>
 		<label >所有人</label>
 			<select class="span2" name="owner">
-				<option value="bency" selected>林詠軒</option>
-				<option value="karen">游怡萍</option>
+				<option value="bency" <?php if($_POST['owner'] == 'bency') echo 'selected'?>>林詠軒</option>
+				<option value="karen" <?php if($_POST['owner'] == 'karen') echo 'selected'?>>游怡萍</option>
 				<option value="shared">共同</option>
 			</select>
 				<?php if(isset($error_owner)){?>

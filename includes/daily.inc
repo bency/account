@@ -116,6 +116,9 @@ $num_row = mysql_num_rows($wtp_query);
 if($num_row > 0){
 
 	while($res = mysql_fetch_array($wtp_query,MYSQL_ASSOC)){
+		if($_POST['way_to_pay'][0] == $res['way_id'])
+		$WTP_option .= '<option value="'.$res['way_id'].'" selected>'.$res['way_name'].'</option>';
+		else
 		$WTP_option .= '<option value="'.$res['way_id'].'">'.$res['way_name'].'</option>';
 	}
 		$WTP_option .='<option value="new">其他</option>';
