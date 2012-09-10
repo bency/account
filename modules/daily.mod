@@ -8,37 +8,51 @@ require_once('includes/daily.inc');
 		<legend>今日開銷</legend>
 			<label for="input01">日期</label>
 				<input class="input-medium" type="text" id="cdate" name="buy_date" value="<?php echo $cur_date?>"/>
-				<p class="help-block"></p>
+				<?php if(isset($error_buydate)){?>
+				<p class="help-block"><?php echo $error_buydate?></p>
+				<?php } ?>
 			<label >消費類型</label>
 				<input class="input-medium" type="text" name="type" id='type_name'/>
-				<p class="help-block"><p/>
+				<?php if(isset($error_type)){?>
+				<p class="help-block"><?php echo $error_buydate?></p>
+				<?php } ?>
 			<label >品名</label>
 				<input class="input-medium" type="text" name="name" id='item_name'/>
-				<p class="help-block"><p/>
+				<?php if(isset($error_name)){?>
+				<p class="help-block"><?php echo $error_buydate?></p>
+				<?php } ?>
 				<div class="input-prepend">
 				<span class="add-on">$</span>
 				<input class="input-small" name="cost" placeholder="金額"/>
-				<p class="help-block"><p/>
+				<?php if(isset($error_cost)){?>
+				<p class="help-block"><?php echo $error_buydate?></p>
+				<?php } ?>
 				</div>
 		<label >購買人</label>
 				<select class="span2" name="buyer" >
 					<option value="bency" selected>林詠軒</option>
 					<option value="karen">游怡萍</option>
 				</select>
-				<p class="help-block"><p/>
+				<?php if(isset($error_buyer)){?>
+				<p class="help-block"><?php echo $error_buydate?></p>
+				<?php } ?>
 		<label >所有人</label>
 			<select class="span2" name="owner">
 				<option value="bency" selected>林詠軒</option>
 				<option value="karen">游怡萍</option>
 				<option value="shared">共同</option>
 			</select>
-				<p class="help-block"><p/>
+				<?php if(isset($error_owner)){?>
+				<p class="help-block"><?php echo $error_buydate?></p>
+				<?php } ?>
 		<label >付款方式</label>
 			<select class="span2" id="wtp" name="way_to_pay" onchange="new_other()">
 				<?php echo $WTP_option ?>
 			</select>
-				<p class="help-block"><p/>
 			<input class="input-medium" type="hidden" name="way_to_pay" id="other"/>
+				<?php if(isset($error_wtp)){?>
+				<p class="help-block"><?php echo $error_buydate?></p>
+				<?php } ?>
 		<label >
 		<button type="submit" name="submit" value="送出" class="btn btn-primary">送出</button>
 		</label>

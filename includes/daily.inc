@@ -19,11 +19,11 @@ if(isset($_POST['submit'])){
 	$year = substr($date,0,4);
 	$month = substr($date,5,2);
 	$day = substr($date,8,2);
-	if(!isset($_POST['buyer'])){
+	if(($_POST['buyer']) == ''){
 		$error_buyer = "購買人沒填</br>";
 		$er_count++;
 	}
-	if(!isset($_POST['owner'])){
+	if(($_POST['owner']) == ''){
 		$error_owner .= "所有人沒填</br>";
 		$er_count++;
 	}
@@ -31,15 +31,19 @@ if(isset($_POST['submit'])){
 		$error_cost .= "金額沒填</br>";
 		$er_count++;
 	}
-	if(!isset($_POST['name'])){
+	if(($_POST['type']) == ''){
+		$error_type.= "消費類型沒填</br>";
+		$er_count++;
+	}
+	if(($_POST['name']) == ''){
 		$error_name .= "品名沒填</br>";
 		$er_count++;
 	}
-	if(!isset($_POST['buy_date'])){
+	if(($_POST['buy_date']) == ''){
 		$error_buydate .= "日期沒填</br>";
 		$er_count++;
 	}
-	if(!isset($_POST['way_to_pay'])){
+	if(($_POST['way_to_pay']) == ''){
 		$error_wtp .= "購買方式沒填</br>";
 		$er_count++;
 	}
@@ -57,9 +61,6 @@ if(isset($_POST['submit'])){
 			$message = "SAVE";
 		else
 			$message = mysql_error();
-	}
-	else{
-		$result = $error;
 	}
 	$query = mysql_query("select * from spend_record left join WTP on way_to_pay=way_id where buy_date='".mktime(0,0,0,$month,$day,$year)."' order by spend_record.buy_date desc,buyer desc");
 	$cur_date = $date;

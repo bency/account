@@ -49,6 +49,14 @@ $(function() {
 		showTrigger: '#calImg',
 		altField: '#l10nAlternate2', altFormat: ' yyyy年MM d日 DD'},
 		$.datepick.regional['zh-TW']));
+	$('#date_start').datepick($.extend({
+		showTrigger: '#calImg',
+		altField: '#l10nAlternate2', altFormat: ' yyyy年MM d日 DD'},
+		$.datepick.regional['zh-TW']));
+	$('#date_end').datepick($.extend({
+		showTrigger: '#calImg',
+		altField: '#l10nAlternate2', altFormat: ' yyyy年MM d日 DD'},
+		$.datepick.regional['zh-TW']));
 	$('#l10nLanguage').change(function() {
 		var language = $(this).val();
 		$.localise('includes/jquery.datepick', language);

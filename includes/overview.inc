@@ -1,5 +1,15 @@
 <?php
-$query = mysql_query("select * from spend_record left join WTP on way_to_pay=way_id order by spend_record.buy_date desc,buyer desc");
+if(isset($_POST['query']))
+	$query = mysql_query("	select * from spend_record 
+							left join WTP on way_to_pay=way_id 
+							where buy_date >= unix_timestamp('".$_POST['start']."') 
+								and buy_date <= unix_timestamp('".$_POST['end']."') 
+							order by spend_record.buy_date desc,buyer desc");
+else
+	$query = mysql_query("	select * from spend_record 
+							left join WTP on way_to_pay=way_id 
+							order by spend_record.buy_date desc,buyer desc");
+
 $num_row = mysql_num_rows($query);
 if($num_row > 0){
 
