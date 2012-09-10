@@ -4,7 +4,6 @@
 $menu = array();
 $error = "";
 $er_count = 0;
-var_dump($_POST);
 if(isset($_POST['submit'])){
 	$date = $_POST['buy_date'];
 	$year = substr($date,0,4);
@@ -111,6 +110,20 @@ else{
 	else
 		$query = mysql_query("select * from spend_record left join WTP on way_to_pay=way_id where buy_date='".mktime(0,0,0,date('m'),date('d'),date('Y'))."' order by spend_record.buy_date desc,buyer desc limit 0,8");
 }
+$wtp_query = mysql_query("select * from WTP order by way_id");
+$WTP_option = '';
+$num_row = mysql_num_rows($wtp_query);
+if($num_row > 0){
+
+	while($res = mysql_fetch_array($wtp_query,MYSQL_ASSOC)){
+		$WTP_option .= '<option value="'.$res['way_id'].'">'.$res['way_name'].'</option>';
+	}
+		$WTP_option .='<option value="new">其他</option>';
+}
+else{
+		$WTP_option ='<option>請選擇</option>';
+		$WTP_option .='<option value="new">其他</option>';
+}
 $num_row = mysql_num_rows($query);
 
 if($num_row > 0){
@@ -167,19 +180,5 @@ if($num_row > 0){
 		else if($res['way_id'] == 2)
 			$credit[$res['buyer']] += $res['cost'];
 	}
-}
-$query = mysql_query("select * from WTP order by way_id");
-$WTP_option = '';
-$num_row = mysql_num_rows($query);
-if($num_row > 0){
-
-	while($res = mysql_fetch_array($query,MYSQL_ASSOC)){
-		$WTP_option .= '<option value="'.$res['way_id'].'">'.$res['way_name'].'</option>';
-	}
-		$WTP_option .='<option value="new">其他</option>';
-}
-else{
-		$WTP_option ='<option>請選擇</option>';
-		$WTP_option .='<option value="new">其他</option>';
 }
 ?>
