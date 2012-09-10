@@ -46,16 +46,14 @@ require_once('includes/daily.inc');
 				<p class="help-block"><?php echo $error_buydate?></p>
 				<?php } ?>
 		<label >付款方式</label>
-			<select class="span2" id="wtp" name="way_to_pay" onchange="new_other()">
+			<select class="span2" id="wtp" name="way_to_pay[]" onchange="new_other()">
 				<?php echo $WTP_option ?>
 			</select>
-			<input class="input-medium" type="hidden" name="way_to_pay" id="other"/>
+			<input class="input-medium" type="hidden" name="way_to_pay[]" id="other"/>
 				<?php if(isset($error_wtp)){?>
 				<p class="help-block"><?php echo $error_buydate?></p>
 				<?php } ?>
-		<label >
 		<button type="submit" name="submit" value="送出" class="btn btn-primary">送出</button>
-		</label>
 		</fieldset>
 	</form>
 	</div>
@@ -67,7 +65,7 @@ require_once('includes/daily.inc');
 	<div class="span8">
 		<table class="table table-striped">
 		<tr><td></td><td>林詠軒</td><td>游怡萍</td></tr>
-		<tr><td>實付</td><td><?php echo $pay['bency'];?></td><td><?php echo $pay['karen']?></td></tr>
+		<tr><td>實付</td><td><?php echo $pay['bency']['現金'];?></td><td><?php echo $pay['karen']?></td></tr>
 		<tr><td>悠遊卡</td><td><?php echo $yoyo['bency'];?></td><td><?php echo $yoyo['karen']?></td></tr>
 		<tr><td>信用卡</td><td><?php echo $credit['bency'];?></td><td><?php echo $credit['karen']?></td></tr>
 		<tr><td>額外</td><td><?php echo $su_pay['bency'];?></td><td><?php echo $su_pay['karen']?></td></tr>
@@ -77,7 +75,7 @@ require_once('includes/daily.inc');
 	<script type="text/javascript">
 	function new_other(){
 		var selection=document.getElementById("wtp");
-		if(wtp.options[wtp.selectedIndex].value=='3')
+		if(wtp.options[wtp.selectedIndex].value=='new')
 			document.getElementById("other").type="text";
 		else
 			document.getElementById("other").type="hidden";

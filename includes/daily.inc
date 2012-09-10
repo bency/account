@@ -1,19 +1,10 @@
 <?php
 
 // Get the option of way_to_pay
-$query = mysql_query("select * from WTP order by way_id");
-$WTP_option = '';
-$num_row = mysql_num_rows($query);
-if($num_row > 0){
-
-	while($res = mysql_fetch_array($query,MYSQL_ASSOC)){
-		$WTP_option .= '<option value="'.$res['way_id'].'">'.$res['way_name'].'</option>';
-	}
-}
-
 $menu = array();
 $error = "";
 $er_count = 0;
+var_dump($_POST);
 if(isset($_POST['submit'])){
 	$date = $_POST['buy_date'];
 	$year = substr($date,0,4);
@@ -31,10 +22,10 @@ if(isset($_POST['submit'])){
 		$error_cost .= "金額沒填</br>";
 		$er_count++;
 	}
-	if(($_POST['type']) == ''){
-		$error_type.= "消費類型沒填</br>";
-		$er_count++;
-	}
+//	if(($_POST['type']) == ''){
+//		$error_type.= "消費類型沒填</br>";
+//		$er_count++;
+//}
 	if(($_POST['name']) == ''){
 		$error_name .= "品名沒填</br>";
 		$er_count++;
@@ -43,7 +34,7 @@ if(isset($_POST['submit'])){
 		$error_buydate .= "日期沒填</br>";
 		$er_count++;
 	}
-	if(($_POST['way_to_pay']) == ''){
+	if(!isset($_POST['way_to_pay'])){
 		$error_wtp .= "購買方式沒填</br>";
 		$er_count++;
 	}
@@ -54,8 +45,20 @@ if(isset($_POST['submit'])){
 	*/
 	if($er_count == 0){
 		$cur_date = $_POST['buy_date'];
-		$query = "insert into spend_record(buyer,owner,cost,type,name,buy_date,way_to_pay,project_id) values('".$_POST['buyer']."','".$_POST['owner']."','".$_POST['cost']."','".$_POST['type']."','".$_POST['name']."','".mktime(0,0,0,$month,$day,$year)."','".$_POST['way_to_pay']."','0000001')";
-			echo "<p>";
+		if($_POST['way_to_pay'][0] == 'new'){
+			$new_wtp = $_POST['way_to_pay'][1];
+			$query_wtp = "insert into WTP(way_name) values('$new_wtp')";
+			if($result = mysql_query($query_wtp)){
+				$query_wtp = "select way_id from WTP where way_name='$new_wtp'";
+				$row = mysql_fetch_assoc(mysql_query($query_wtp));
+				var_dump($row);
+			}
+			else
+				echo mysql_error();
+		}
+		else{
+			$query = "insert into spend_record(buyer,owner,cost,type,name,buy_date,way_to_pay,project_id) values('".$_POST['buyer']."','".$_POST['owner']."','".$_POST['cost']."','".$_POST['type']."','".$_POST['name']."','".mktime(0,0,0,$month,$day,$year)."','".$_POST['way_to_pay'][0]."','0000001')";
+		}
 
 		if(mysql_query($query))
 			$message = "SAVE";
@@ -164,5 +167,19 @@ if($num_row > 0){
 		else if($res['way_id'] == 2)
 			$credit[$res['buyer']] += $res['cost'];
 	}
+}
+$query = mysql_query("select * from WTP order by way_id");
+$WTP_option = '';
+$num_row = mysql_num_rows($query);
+if($num_row > 0){
+
+	while($res = mysql_fetch_array($query,MYSQL_ASSOC)){
+		$WTP_option .= '<option value="'.$res['way_id'].'">'.$res['way_name'].'</option>';
+	}
+		$WTP_option .='<option value="new">其他</option>';
+}
+else{
+		$WTP_option ='<option>請選擇</option>';
+		$WTP_option .='<option value="new">其他</option>';
 }
 ?>
