@@ -64,7 +64,10 @@ require_once('includes/daily.inc');
 	</div>
 	<div class="span8">
 		<table class="table table-striped">
-		<tr><td></td><td>林詠軒</td><td>游怡萍</td></tr>
+		<tr><td></td>
+	<?php	foreach($record as $key => $value){?>
+		<td><?php echo $key?></td>
+<?php	} ?></tr>
 		<tr><td>實付</td><td><?php echo $pay['bency']['現金'];?></td><td><?php echo $pay['karen']?></td></tr>
 		<tr><td>悠遊卡</td><td><?php echo $yoyo['bency'];?></td><td><?php echo $yoyo['karen']?></td></tr>
 		<tr><td>信用卡</td><td><?php echo $credit['bency'];?></td><td><?php echo $credit['karen']?></td></tr>

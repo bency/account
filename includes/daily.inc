@@ -50,7 +50,7 @@ if(isset($_POST['submit'])){
 			if($result = mysql_query($query_wtp)){
 				$query_wtp = "select way_id from WTP where way_name='$new_wtp'";
 				$row = mysql_fetch_assoc(mysql_query($query_wtp));
-				var_dump($row);
+				$query = "insert into spend_record(buyer,owner,cost,type,name,buy_date,way_to_pay,project_id) values('".$_POST['buyer']."','".$_POST['owner']."','".$_POST['cost']."','".$_POST['type']."','".$_POST['name']."','".mktime(0,0,0,$month,$day,$year)."','".$row['way_id']."','0000001')";
 			}
 			else
 				echo mysql_error();
@@ -176,12 +176,18 @@ if($num_row > 0){
 				$su_pay['karen'] += $res['cost'];
 			}
 		}
+		/*
 		if($res['way_id'] == 0)
 			$pay[$res['buyer']] += $res['cost'];
 		else if($res['way_id'] == 1)
 			$yoyo[$res['buyer']] += $res['cost'];
 		else if($res['way_id'] == 2)
 			$credit[$res['buyer']] += $res['cost'];
+			*/
+		//$record[$res['way_name']][$res['buyer']] += $res['cost'];
+		$record[$res['buyer']][$res['way_name']] += $res['cost'];
+		if($res['cash'] == 'yes')
+			$pay[$res['buyer']] += $res['cost'];
 	}
 }
 ?>
