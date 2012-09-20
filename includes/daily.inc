@@ -108,7 +108,7 @@ else{
 		$query = mysql_query("select * from spend_record left join WTP on way_to_pay=way_id where buy_date='".mktime(0,0,0,$month,$day,$year)."' order by spend_record.buy_date desc,buyer desc");
 	}
 	else
-		$query = mysql_query("select * from spend_record left join WTP on way_to_pay=way_id where buy_date='".mktime(0,0,0,date('m'),date('d'),date('Y'))."' order by spend_record.buy_date desc,buyer desc limit 0,8");
+		$query = mysql_query("select * from spend_record join WTP on way_to_pay=way_id where buy_date='".mktime(0,0,0,date('m'),date('d'),date('Y'))."' order by spend_record.buy_date desc,buyer desc limit 0,8");
 }
 $wtp_query = mysql_query("select * from WTP order by way_id");
 $WTP_option = '';
@@ -185,7 +185,7 @@ if($num_row > 0){
 			$credit[$res['buyer']] += $res['cost'];
 			*/
 		//$record[$res['way_name']][$res['buyer']] += $res['cost'];
-		$record[$res['buyer']][$res['way_name']] += $res['cost'];
+		$record[$res['way_name']][$res['buyer']] += $res['cost'];
 		if($res['cash'] == 'yes')
 			$pay[$res['buyer']] += $res['cost'];
 	}

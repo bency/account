@@ -64,14 +64,11 @@ require_once('includes/daily.inc');
 	</div>
 	<div class="span8">
 		<table class="table table-striped">
-		<tr><td></td>
-	<?php	foreach($record as $key => $value){?>
-		<td><?php echo $key?></td>
-<?php	} ?></tr>
-		<tr><td>實付</td><td><?php echo $pay['bency']['現金'];?></td><td><?php echo $pay['karen']?></td></tr>
-		<tr><td>悠遊卡</td><td><?php echo $yoyo['bency'];?></td><td><?php echo $yoyo['karen']?></td></tr>
-		<tr><td>信用卡</td><td><?php echo $credit['bency'];?></td><td><?php echo $credit['karen']?></td></tr>
-		<tr><td>額外</td><td><?php echo $su_pay['bency'];?></td><td><?php echo $su_pay['karen']?></td></tr>
+		<tr><td></td><td>Bency</td><td>Karen</td></tr>
+	<?php	foreach($record as $key => $value){ ?>
+<tr> <td><?php echo $key?></td><td><?php echo $value['bency']?></td><td><?php echo $value['karen']?></td></tr>
+<?php } ?>
+		<tr><td>總和</td><td><?php echo $pay['bency'] ?></td><td><?php echo $pay['karen'] ?></td></tr>
 		</table>
 	</div>
 	
