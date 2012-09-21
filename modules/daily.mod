@@ -5,11 +5,12 @@ require_once('includes/daily.inc');
 	<div class="span3">
 	<form class="well form-horizontal" method="post" action="#">
 		<fieldset>
-		<legend>今日開銷</legend>
+		<legend><a class='btn' href='/daily/<?php echo $yesterday?>'><i class='icon-arrow-left'></i></a>今日開銷<a class='btn' href='/daily/<?php echo $tomorrow?>'><i class='icon-arrow-right'></i></a></legend>
 			<label for="input01">日期</label>
 				<input class="input-medium" type="text" id="cdate" name="buy_date" value="<?php echo $cur_date?>"/>
+				<button class='btn btn-mini' type='submit' name='choose_day'>選這天</button>
 				<?php if(isset($error_buydate)){?>
-				<p class="help-block"><?php echo $error_buydate?></p>
+					<p class="help-block"><?php echo $error_buydate?></p>
 				<?php } ?>
 			<label >消費類型</label>
 				<input class="input-medium" type="text" name="type" id='type_name'/>

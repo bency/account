@@ -15,7 +15,7 @@ if($num_row > 0){
 
 	while($res = mysql_fetch_array($query,MYSQL_ASSOC)){
 		$result.= "<tr>";
-		$result.= "<td class=\"span4\">".date("m-d",$res['buy_date'])."</td>";
+		$result.= "<td class=\"span4\">".date("Y-m-d",$res['buy_date'])."</td>";
 		$result.= "<td class=\"span2\">".$res['type']."</td>";
 		$result.= "<td class=\"span2\">".$res['name']."</td>";
 		$result.= "<td class=\"span1\">".$res['cost']."</td>";
