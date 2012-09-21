@@ -17,22 +17,22 @@ $cur_date = date("Y-m-d");
 
 $(function() {
     $("#mod_item").autocomplete({
-        url: 'includes/item_search.php',
+        url: '/includes/item_search.php',
         useCache: false,
         filterResults: false
     });
     $("#mod_type").autocomplete({
-        url: 'includes/type_search.php',
+        url: '/includes/type_search.php',
         useCache: false,
         filterResults: false
     });
     $("#item_name").autocomplete({
-        url: 'includes/item_search.php',
+        url: '/includes/item_search.php',
         useCache: false,
         filterResults: false
     });
     $("#type_name").autocomplete({
-        url: 'includes/type_search.php',
+        url: '/includes/type_search.php',
         useCache: false,
         filterResults: false
     });
@@ -59,7 +59,7 @@ $(function() {
 		$.datepick.regional['zh-TW']));
 	$('#l10nLanguage').change(function() {
 		var language = $(this).val();
-		$.localise('includes/jquery.datepick', language);
+		$.localise('/includes/jquery.datepick', language);
 		$('#l10nPicker').datepick('option', $.datepick.regional[language]);
 		$.datepick.setDefaults($.datepick.regional['']); 
 	});
@@ -70,7 +70,7 @@ $(function() {
 		$.datepick.regional['zh-TW']));
 	$('#l10nLanguage').change(function() {
 		var language = $(this).val();
-		$.localise('includes/jquery.datepick', language);
+		$.localise('/includes/jquery.datepick', language);
 		$('#l10nPicker').datepick('option', $.datepick.regional[language]);
 		$.datepick.setDefaults($.datepick.regional['']); 
 	});
