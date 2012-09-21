@@ -9,6 +9,15 @@
 <input class='btn btn-primary' name='query' type='submit' value='查詢' />
 </form>
 </div>
+	<div class="span8">
+		<table class="table table-striped">
+		<tr><td></td><td>Bency</td><td>Karen</td></tr>
+	<?php	foreach($record as $key => $value){ ?>
+<tr> <td><?php echo $key?></td><td><?php echo $value['bency']?></td><td><?php echo $value['karen']?></td></tr>
+<?php } ?>
+		<tr><td>總和</td><td><?php echo $pay['bency'] ?></td><td><?php echo $pay['karen'] ?></td></tr>
+		</table>
+	</div>
 <div class="span8">
 	<table class="table table-striped">
 	<tr><td></td><td>林詠軒</td><td>游怡萍</td></tr>

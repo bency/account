@@ -49,6 +49,10 @@ if($num_row > 0){
 			$yoyo[$res['buyer']] += $res['cost'];
 		else if($res['way_id'] == 2)
 			$credit[$res['buyer']] += $res['cost'];
+
+		$record[$res['way_name']][$res['buyer']] += $res['cost'];
+		if($res['cash'] == 'yes')
+			$pay[$res['buyer']] += $res['cost'];
 	}
 }
 ?>
