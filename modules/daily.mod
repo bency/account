@@ -8,7 +8,7 @@ require_once('includes/daily.inc');
 		<legend><a class='btn' href='/daily/<?php echo $yesterday?>'><i class='icon-arrow-left'></i></a>今日開銷<a class='btn' href='/daily/<?php echo $tomorrow?>'><i class='icon-arrow-right'></i></a></legend>
 			<label for="input01">日期</label>
 				<input class="input-medium" type="text" id="cdate" name="buy_date" value="<?php echo $cur_date?>"/>
-				<button class='btn btn-mini' type='submit' name='choose_day'>選這天</button>
+				<button class='btn btn-mini' type='submit' name='submit'>選這天</button>
 				<?php if(isset($error_buydate)){?>
 				<span class="label label-important"><?php echo $error_buydate?></span>
 				<?php } ?>

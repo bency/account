@@ -64,18 +64,10 @@ if(isset($_POST['submit'])){
 		else
 			$message = mysql_error();
 	}
-		$query = mysql_query("select * from spend_record left join WTP on way_to_pay=way_id where buy_date='".mktime(0,0,0,$month,$day,$year)."' order by spend_record.buy_date desc,buyer desc");
-		$cur_date = $date;
-}
-else if(isset($_POST['choose_day'])){
-	$date = $_POST['buy_date'];
-	$year = substr($date,0,4);
-	$month = substr($date,5,2);
-	$day = substr($date,8,2);
-	$query = mysql_query("select * from spend_record left join WTP on way_to_pay=way_id where buy_date='".mktime(0,0,0,$month,$day,$year)."' order by spend_record.buy_date desc,buyer desc");
-	$cur_date = $date;
 	$tomorrow = mktime(0,0,0,$month,$day,$year) + 86400;
 	$yesterday = mktime(0,0,0,$month,$day,$year) - 86400;
+		$query = mysql_query("select * from spend_record left join WTP on way_to_pay=way_id where buy_date='".mktime(0,0,0,$month,$day,$year)."' order by spend_record.buy_date desc,buyer desc");
+		$cur_date = $date;
 }
 else if(isset($_GET['date'])){
 	$query = mysql_query("select * from spend_record left join WTP on way_to_pay=way_id where buy_date='".$_GET['date']."' order by spend_record.buy_date desc,buyer desc");
