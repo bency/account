@@ -63,9 +63,9 @@ if(isset($_POST['submit'])){
 			$message = "SAVE";
 		else
 			$message = mysql_error();
+	}
 		$query = mysql_query("select * from spend_record left join WTP on way_to_pay=way_id where buy_date='".mktime(0,0,0,$month,$day,$year)."' order by spend_record.buy_date desc,buyer desc");
 		$cur_date = $date;
-	}
 }
 else if(isset($_POST['choose_day'])){
 	$date = $_POST['buy_date'];
