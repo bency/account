@@ -14,27 +14,27 @@ if(isset($_POST['submit'])){
 		$er_count++;
 	}
 	if(($_POST['owner']) == ''){
-		$error_owner .= "所有人沒填</br>";
+		$error_owner = "所有人沒填</br>";
 		$er_count++;
 	}
 	if(!isset($_POST['cost']) || $_POST['cost'] == 0){
-		$error_cost .= "金額沒填</br>";
+		$error_cost = "金額沒填</br>";
 		$er_count++;
 	}
-//	if(($_POST['type']) == ''){
-//		$error_type.= "消費類型沒填</br>";
-//		$er_count++;
-//}
+	if(($_POST['type']) == ''){
+		$error_type = "消費類型沒填</br>";
+		$er_count++;
+}
 	if(($_POST['name']) == ''){
-		$error_name .= "品名沒填</br>";
+		$error_name = "品名沒填";
 		$er_count++;
 	}
 	if(($_POST['buy_date']) == ''){
-		$error_buydate .= "日期沒填</br>";
+		$error_buydate = "日期沒填</br>";
 		$er_count++;
 	}
 	if(!isset($_POST['way_to_pay'])){
-		$error_wtp .= "購買方式沒填</br>";
+		$error_wtp = "購買方式沒填</br>";
 		$er_count++;
 	}
 	/*

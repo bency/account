@@ -10,23 +10,27 @@ require_once('includes/daily.inc');
 				<input class="input-medium" type="text" id="cdate" name="buy_date" value="<?php echo $cur_date?>"/>
 				<button class='btn btn-mini' type='submit' name='choose_day'>選這天</button>
 				<?php if(isset($error_buydate)){?>
-					<p class="help-block"><?php echo $error_buydate?></p>
+				<span class="label label-important"><?php echo $error_buydate?></span>
 				<?php } ?>
 			<label >消費類型</label>
+				<div class="input-prepend">
 				<input class="input-medium" type="text" name="type" id='type_name'/>
 				<?php if(isset($error_type)){?>
-				<p class="help-block"><?php echo $error_buydate?></p>
+				<span class="label label-important"><?php echo $error_type?></span>
 				<?php } ?>
+				</div>
 			<label >品名</label>
+				<div class="input-prepend">
 				<input class="input-medium" type="text" name="name" id='item_name'/>
 				<?php if(isset($error_name)){?>
-				<p class="help-block"><?php echo $error_buydate?></p>
+				<span class="label label-important"><?php echo $error_name?></span>
 				<?php } ?>
+				</div>
 				<div class="input-prepend">
 				<span class="add-on">$</span>
 				<input class="input-small" name="cost" placeholder="金額"/>
 				<?php if(isset($error_cost)){?>
-				<p class="help-block"><?php echo $error_buydate?></p>
+				<span class="label label-important"><?php echo $error_cost?></span>
 				<?php } ?>
 				</div>
 		<label >購買人</label>
@@ -34,26 +38,17 @@ require_once('includes/daily.inc');
 					<option value="bency" <?php if($_POST['buyer'] == 'bency') echo 'selected'?>>林詠軒</option>
 					<option value="karen" <?php if($_POST['buyer'] == 'karen') echo 'selected'?>>游怡萍</option>
 				</select>
-				<?php if(isset($error_buyer)){?>
-				<p class="help-block"><?php echo $error_buydate?></p>
-				<?php } ?>
 		<label >所有人</label>
 			<select class="span2" name="owner">
 				<option value="bency" <?php if($_POST['owner'] == 'bency') echo 'selected'?>>林詠軒</option>
 				<option value="karen" <?php if($_POST['owner'] == 'karen') echo 'selected'?>>游怡萍</option>
 				<option value="shared">共同</option>
 			</select>
-				<?php if(isset($error_owner)){?>
-				<p class="help-block"><?php echo $error_buydate?></p>
-				<?php } ?>
 		<label >付款方式</label>
 			<select class="span2" id="wtp" name="way_to_pay[]" onchange="new_other()">
 				<?php echo $WTP_option ?>
 			</select>
 			<input class="input-medium" type="hidden" name="way_to_pay[]" id="other"/>
-				<?php if(isset($error_wtp)){?>
-				<p class="help-block"><?php echo $error_buydate?></p>
-				<?php } ?>
 		<button type="submit" name="submit" value="送出" class="btn btn-primary">送出</button>
 		</fieldset>
 	</form>
