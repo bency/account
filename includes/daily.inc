@@ -1,5 +1,4 @@
 <?php
-
 // Get the option of way_to_pay
 $menu = array();
 $error = "";
@@ -69,12 +68,6 @@ if(isset($_POST['submit'])){
 		$query = mysql_query("select * from spend_record left join WTP on way_to_pay=way_id where buy_date='".mktime(0,0,0,$month,$day,$year)."' order by spend_record.buy_date desc,buyer desc");
 		$cur_date = $date;
 }
-else if(isset($_GET['date'])){
-	$query = mysql_query("select * from spend_record left join WTP on way_to_pay=way_id where buy_date='".$_GET['date']."' order by spend_record.buy_date desc,buyer desc");
-	$cur_date = date('Y-m-d',$_GET['date']);
-	$tomorrow = $_GET['date'] + 86400;
-	$yesterday = $_GET['date'] - 86400;
-}
 else if($_POST['delete'] == "yes"){
 	$date = $_POST['mod_date'];
 	$year = substr($date,0,4);
@@ -119,6 +112,12 @@ else{
 		$query = mysql_query("select * from spend_record join WTP on way_to_pay=way_id where buy_date='".mktime(0,0,0,date('m'),date('d'),date('Y'))."' order by spend_record.buy_date desc,buyer desc limit 0,8");
 	$tomorrow = mktime(0,0,0,date('m'),date('d'),date('Y')) + 86400;
 	$yesterday = mktime(0,0,0,date('m'),date('d'),date('Y')) - 86400;
+}
+if(isset($_GET['date'])){
+	$query = mysql_query("select * from spend_record left join WTP on way_to_pay=way_id where buy_date='".$_GET['date']."' order by spend_record.buy_date desc,buyer desc");
+	$cur_date = date('Y-m-d',$_GET['date']);
+	$tomorrow = $_GET['date'] + 86400;
+	$yesterday = $_GET['date'] - 86400;
 }
 $wtp_query = mysql_query("select * from WTP order by way_id");
 $WTP_option = '';
