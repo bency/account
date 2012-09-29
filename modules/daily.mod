@@ -3,7 +3,7 @@ require_once('includes/daily.inc');
 ?>
 <div class="container-fluid">
 	<div class="span3">
-	<form class="well form-horizontal" method="post" action="#">
+	<form id='new_record' class="well form-horizontal" method="post" action="#">
 		<fieldset>
 		<legend><a class='btn' href='/daily/<?php echo $yesterday?>'><i class='icon-arrow-left'></i></a>今日開銷<a class='btn' href='/daily/<?php echo $tomorrow?>'><i class='icon-arrow-right'></i></a></legend>
 			<label for="input01">日期</label>
@@ -75,10 +75,6 @@ require_once('includes/daily.inc');
 			document.getElementById("other").type="text";
 		else
 			document.getElementById("other").type="hidden";
-	}
-	function submit(id){
-		var form=document.getElementById("modify");
-		form.submit;
 	}
 	</script>
 </div>

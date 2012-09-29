@@ -86,7 +86,9 @@ function showDate(date) {
 <div class="main-content">
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
+			<?php if($agent == "regular"){?>
 			<div class='container'>
+			<?php }?>
 				<a href="/" class="brand">首頁</a>
 				<ul class="nav nav-pills">
 					<li <?php if($_GET['id'] == 2) echo "class =\"active\""; ?>><a href="/daily">當日記錄</a></li>
@@ -103,15 +105,19 @@ function showDate(date) {
 					<button type="submit" name="logout" class="btn">登出</button>
 				<?php }?>
 				</form>
+			<?php if($agent == "regular"){?>
 			</div>
+			<?php }?>
 		</div>
 	</div>
 	<?php include($module); ?>
 </div>
 <hr/>
+			<?php if($agent == "regular"){?>
 <div class="container">
 <footer><?php echo Get_Client_Ip();?><p><?php echo $_SERVER["REQUEST_URI"]?></p></footer>
 </div>
+			<?php }?>
 <script src="/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>
