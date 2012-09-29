@@ -1,10 +1,13 @@
 <?php
 $id = $_GET['id'];
 $ua = $_SERVER['HTTP_USER_AGENT'];
-if(preg_match('/.*(iPhone).*/',$ua))
+if(preg_match('/.*(iPhone).*/',$ua)){
 	$agent = "mobile";
-else
+}
+else{
 	$agent = "regular";
+}
+echo $agent;
 if($agent == "regular"){
 	switch($id){
 		case 1:
