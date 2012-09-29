@@ -95,6 +95,7 @@ function showDate(date) {
 					<li <?php if($_GET['id'] == 5) echo "class =\"active\""; ?>><a href="/overview">記錄總覽</a></li>
 					<li <?php if($_GET['id'] == 10) echo "class =\"active\""; ?>><a href="/find-me">尋找班西</a></li>
 				</ul>
+			<?php if($agent == "regular"){?>
 				<form class="pull-right navbar-form" method="post" action="/login?from=<?php echo $_SERVER['REQUEST_URI']?>">
 				<?php if(!$login){ ?>
 					<input type="text" name="username" class="input-small" placeholder="Email">
@@ -105,6 +106,7 @@ function showDate(date) {
 					<button type="submit" name="logout" class="btn">登出</button>
 				<?php }?>
 				</form>
+			<?php }?>
 			<?php if($agent == "regular"){?>
 			</div>
 			<?php }?>
