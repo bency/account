@@ -40,8 +40,11 @@ $(function() {
     </script>
 <!-- 日曆選單-->                                                                                                                                               
 <link rel="stylesheet" href="/includes/jquery.datepick.css" type="text/css" />
+<?php if($agent == "regular"){?>
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" type="text/css" />
-<link rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.css" type="text/css" />
+<?php } else{?>
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.mob.css" type="text/css" />
+<?php } ?>
 <script type="text/javascript" src="/includes/jquery.datepick.js"></script>
 <script type="text/javascript" src="/includes/jquery.datepick-zh-TW.js"></script>
 <script type="text/javascript">
@@ -84,8 +87,11 @@ function showDate(date) {
 
 <body>
 <div class="main-content">
-	<?php if($agent == "regular" || $_GET['id'] == 0){?>
+	<?php if($agent == "regular" ){?>
 	<div class="navbar navbar-fixed-top">
+	<?php } else {?>
+	<div class="navbar">
+	<?php }?>
 		<div class="navbar-inner">
 			<?php if($agent == "regular"){?>
 			<div class='container'>
@@ -113,7 +119,6 @@ function showDate(date) {
 			<?php }?>
 		</div>
 	</div>
-	<?php }?>
 	<?php include($module); ?>
 </div>
 <hr/>

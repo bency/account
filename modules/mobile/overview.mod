@@ -1,6 +1,4 @@
 <?php require_once('includes/overview.inc');?>
-<div class='container'>
-	<div class='row'>
 		<div class='span3'>
 			<form action='#' method='post'>
 			<legend>日期範圍</legend>
@@ -18,7 +16,7 @@
 			<input class='btn btn-primary' name='query' type='submit' value='查詢' />
 			</form>
 		</div>
-		<div class="span8">
+		<div class="span3">
 			<table class="table table-striped">
 			<tr><td></td><td>Bency</td><td>Karen</td></tr>
 		<?php	foreach($record as $key => $value){ ?>
@@ -28,12 +26,8 @@
 			<tr><td>額外</td><td><?php echo $su_pay['bency'];?></td><td><?php echo $su_pay['karen']?></td></tr>
 			</table>
 		</div>
-	</div>
-	<div class='row'>
-		<div class='span11'>
+		<div class='span3'>
 			<table class="table table-striped">
 				<?php echo $result ?>
 			</table>
 		</div>
-	</div>
-</div>

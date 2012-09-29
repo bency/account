@@ -1,7 +1,7 @@
 <?php
 require_once('includes/daily.inc');
 ?>
-<div class="row span4">
+<div class="row span3">
 	<div class="span3">
 	<form id='new_record' class="well form-horizontal" method="post" action="#">
 		<fieldset>
@@ -54,12 +54,12 @@ require_once('includes/daily.inc');
 		</fieldset>
 	</form>
 	</div>
-	<div class="span4">
+	<div class="span3">
 		<table class="table table-striped">
 			<?php echo $result; ?>
 		</table>
 	</div>
-	<div class="span4">
+	<div class="span3">
 		<table class="table table-striped">
 		<tr><td></td><td>Bency</td><td>Karen</td></tr>
 	<?php	foreach($record as $key => $value){ ?>
