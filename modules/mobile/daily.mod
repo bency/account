@@ -1,7 +1,7 @@
 <?php
 require_once('includes/daily.inc');
 ?>
-<div class="row">
+<div class="row span4">
 	<div class="span3">
 	<form id='new_record' class="well form-horizontal" method="post" action="#">
 		<fieldset>
@@ -26,6 +26,7 @@ require_once('includes/daily.inc');
 				<span class="label label-important"><?php echo $error_name?></span>
 				<?php } ?>
 				</div>
+			<label ></label>
 				<div class="input-prepend">
 				<span class="add-on">$</span>
 				<input class="input-small" name="cost" placeholder="金額"/>
@@ -53,12 +54,12 @@ require_once('includes/daily.inc');
 		</fieldset>
 	</form>
 	</div>
-	<div class="span8">
+	<div class="span4">
 		<table class="table table-striped">
 			<?php echo $result; ?>
 		</table>
 	</div>
-	<div class="span8">
+	<div class="span4">
 		<table class="table table-striped">
 		<tr><td></td><td>Bency</td><td>Karen</td></tr>
 	<?php	foreach($record as $key => $value){ ?>

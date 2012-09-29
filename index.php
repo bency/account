@@ -84,6 +84,7 @@ function showDate(date) {
 
 <body>
 <div class="main-content">
+	<?php if($agent == "regular" || $_GET['id'] == 0){?>
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<?php if($agent == "regular"){?>
@@ -112,6 +113,7 @@ function showDate(date) {
 			<?php }?>
 		</div>
 	</div>
+	<?php }?>
 	<?php include($module); ?>
 </div>
 <hr/>
