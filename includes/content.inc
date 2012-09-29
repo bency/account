@@ -7,7 +7,6 @@ if(preg_match('/.*(iPhone).*/',$ua)){
 else{
 	$agent = "regular";
 }
-echo $agent;
 if($agent == "regular"){
 	switch($id){
 		case 1:
