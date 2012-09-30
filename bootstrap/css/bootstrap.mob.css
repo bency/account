@@ -10,10 +10,6 @@
 .register-form-center {
 	margin-left:210px;
 }
-.main-content {
-height:600px;
-overflow:scroll;
-}                        
 .clearfix {
   *zoom: 1;
 }
@@ -4771,12 +4767,6 @@ button.close {
 }
 .visible-desktop {
   display: inherit !important;
-}
-.main-content {
- height: 600px;
-}
-.sub-content {
- height:400px;
 }
 @media (min-width: 768px) and (max-width: 979px) {
   .hidden-desktop {
