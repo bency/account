@@ -10,7 +10,13 @@ $cur_date = date("Y-m-d");
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title><?php echo $head_title?> - 小萍與阿軒的記帳本</title>
     <link rel="stylesheet" type="text/css" href="/includes/jquery.autocomplete.css">
+<?php if($agent == "regular"){?>
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.css" type="text/css" />
+<?php } else{?>
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.mob.css" type="text/css" />
+<?php } ?>
 </head>
+<?php if($agent == "regular"){?>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="/includes/jquery.autocomplete.js"></script>
     <script type="text/javascript">
@@ -40,11 +46,6 @@ $(function() {
     </script>
 <!-- 日曆選單-->                                                                                                                                               
 <link rel="stylesheet" href="/includes/jquery.datepick.css" type="text/css" />
-<?php if($agent == "regular"){?>
-<link rel="stylesheet" href="/bootstrap/css/bootstrap.css" type="text/css" />
-<?php } else{?>
-<link rel="stylesheet" href="/bootstrap/css/bootstrap.mob.css" type="text/css" />
-<?php } ?>
 <script type="text/javascript" src="/includes/jquery.datepick.js"></script>
 <script type="text/javascript" src="/includes/jquery.datepick-zh-TW.js"></script>
 <script type="text/javascript">
@@ -84,6 +85,7 @@ function showDate(date) {
 }
 </script>
 <!-- 日曆選單-->   
+<?php }?>
 
 <body>
 <div class="main-content">
@@ -121,12 +123,12 @@ function showDate(date) {
 	</div>
 	<?php include($module); ?>
 </div>
-<hr/>
 			<?php if($agent == "regular"){?>
+<hr/>
 <div class="container">
 <footer><?php echo Get_Client_Ip();?><p><?php echo $_SERVER["REQUEST_URI"]?></p></footer>
 </div>
-			<?php }?>
 <script src="/bootstrap/js/bootstrap.js"></script>
+			<?php }?>
 </body>
 </html>
