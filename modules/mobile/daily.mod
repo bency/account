@@ -1,8 +1,7 @@
 <?php
 require_once('includes/daily.inc');
 ?>
-<div class="row span3">
-	<div class="span3">
+	<div class="">
 	<form id='new_record' class="well form-horizontal" method="post" action="#">
 		<fieldset>
 		<legend><a class='btn' href='/daily/<?php echo $yesterday?>'><i class='icon-arrow-left'></i></a>今日開銷<a class='btn' href='/daily/<?php echo $tomorrow?>'><i class='icon-arrow-right'></i></a></legend>
@@ -54,12 +53,12 @@ require_once('includes/daily.inc');
 		</fieldset>
 	</form>
 	</div>
-	<div class="span3">
+	<div class="">
 		<table class="table table-striped">
 			<?php echo $result; ?>
 		</table>
 	</div>
-	<div class="span3">
+	<div class="">
 		<table class="table table-striped">
 		<tr><td></td><td>Bency</td><td>Karen</td></tr>
 	<?php	foreach($record as $key => $value){ ?>
@@ -68,14 +67,3 @@ require_once('includes/daily.inc');
 		<tr><td>總和</td><td><?php echo $pay['bency'] ?></td><td><?php echo $pay['karen'] ?></td></tr>
 		</table>
 	</div>
-	
-	<script type="text/javascript">
-	function new_other(){
-		var selection=document.getElementById("wtp");
-		if(wtp.options[wtp.selectedIndex].value=='new')
-			document.getElementById("other").type="text";
-		else
-			document.getElementById("other").type="hidden";
-	}
-	</script>
-</div>
