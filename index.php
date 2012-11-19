@@ -8,6 +8,7 @@ $cur_date = date("Y-m-d");
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title><?php echo $head_title?> - 小萍與阿軒的記帳本</title>
     <link rel="stylesheet" type="text/css" href="/includes/jquery.autocomplete.css">
 <?php if($agent == "regular"){?>
