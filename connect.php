@@ -4,8 +4,8 @@ $user = "db_account";
 $passwd = "ddyoinejjmj";
 $link = mysql_connect($location,$user,$passwd);
 if(!$link){
-	//$location = "localhost";
-	//$link = mysql_connect($location,$user,$passwd);
+	$location = "localhost";
+	$link = mysql_connect($location,$user,$passwd);
 	if(!$link){
 		die('連線失敗'.mysql_error());
 	}
