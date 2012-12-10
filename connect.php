@@ -1,5 +1,5 @@
 <?php
-$location = "lab.bency.org";
+$location = "www.jccf.com.tw";
 $user = "db_account";
 $passwd = "ddyoinejjmj";
 $link = mysql_connect($location,$user,$passwd);
